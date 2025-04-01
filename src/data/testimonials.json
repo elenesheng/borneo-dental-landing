@@ -1,0 +1,19 @@
+{
+  "testimonials": [
+    {
+      "name": "Matias Gomez",
+      "rating": 4,
+      "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit conubia, massa facilisi lectus ullamcorper ridiculus potenti iaculis nibh, interdum faucibus ad diam vivamus vehicula fames."
+    },
+    {
+      "name": "Maria Paz",
+      "rating": 3,
+      "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit conubia, massa facilisi lectus ullamcorper ridiculus potenti iaculis nibh, interdum faucibus ad diam vivamus vehicula fames."
+    },
+    {
+      "name": "Silvia Rios",
+      "rating": 5,
+      "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit conubia, massa facilisi lectus ullamcorper ridiculus potenti iaculis nibh, interdum faucibus ad diam vivamus vehicula fames."
+    }
+  ]
+}

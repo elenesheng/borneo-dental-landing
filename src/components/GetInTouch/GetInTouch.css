@@ -1,0 +1,39 @@
+.get-in-touch {
+  background-color: #dce9f7;
+  padding: 40px 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b2b5e;
+  font-size: 24px;
+}
+
+.icon i {
+  font-size: 24px;
+}
+
+.info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0b2b5e;
+  margin-bottom: 4px;
+}
+
+.info p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.6;
+}

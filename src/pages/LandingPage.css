@@ -1,0 +1,781 @@
+/* Custom variables to match your brand colors */
+:root {
+  --primary-blue: #0981c8;
+  --light-blue: #0d6efd;
+  --text-color: #525252;
+}
+
+/* Override Bootstrap primary color */
+.btn-primary {
+  background-color: var(--light-blue) !important;
+  border-color: var(--light-blue) !important;
+}
+
+.btn-outline-primary {
+  border-color: var(--primary-blue) !important;
+  color: var(--primary-blue) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-blue) !important;
+  color: white !important;
+}
+
+/* Navbar styles */
+.navbar-brand h1 {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+}
+
+.navbar-brand .subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.tooth-icon {
+  width: 40px;
+  height: auto;
+}
+
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+}
+
+.appointment-btn {
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Hero section styles */
+.hero-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.location {
+  color: var(--light-blue);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  color: var(--primary-blue);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-image-container {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  width: 120%;
+  height: auto;
+  max-width: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.hero-image {
+  position: relative;
+  width: 80%;
+  height: auto;
+  z-index: 2;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.services-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.services-link:hover {
+  text-decoration: underline;
+}
+
+.cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-image-container {
+    margin-top: 2rem;
+  }
+
+  .hero-background {
+    width: 110%;
+  }
+
+  .hero-image {
+    width: 75%;
+  }
+}
+
+/* Add these new styles to your existing CSS */
+
+/* Adjust for fixed navbar */
+.landing-page {
+  padding-top: 80px; /* Adjust based on your navbar height */
+}
+
+.section-padding {
+  padding: 5rem 0;
+}
+
+.section-subtitle {
+  color: var(--light-blue);
+  opacity: 0.9;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.section-title {
+  color: var(--light-blue);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+/* Fixed navbar styles */
+.navbar.fixed-top {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scroll behavior for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section backgrounds */
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+/* Services Section Styles */
+.service-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.service-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.service-title {
+  color: var(--primary-blue);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.service-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-link {
+  color: var(--light-blue) !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Testimonials Section Styles */
+.testimonial-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.patient-name {
+  font-size: 1.25rem;
+  color: var(--primary-blue);
+  margin: 0;
+  font-weight: 600;
+}
+
+.rating {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star-icon {
+  color: #ddd;
+  font-size: 1.25rem;
+}
+
+.star-icon.active {
+  color: var(--light-blue);
+}
+
+.testimonial-text {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Pagination Dots */
+.testimonial-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--primary-blue);
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonial-card {
+    margin: 0.5rem 0;
+  }
+
+  .testimonial-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Optional: Add slider animation */
+.testimonials-slider {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Testimonials Slider Styles */
+.testimonials-wrapper {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.testimonials-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+}
+
+.testimonials-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonials-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .testimonial-slide {
+    min-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .testimonial-slide {
+    min-width: 33.333%;
+  }
+}
+
+/* Navigation Buttons */
+.slider-btn {
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  color: var(--primary-blue);
+  transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.slider-btn.prev {
+  left: -20px;
+}
+
+.slider-btn.next {
+  right: -20px;
+}
+
+/* Pagination Dots */
+.testimonial-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--primary-blue);
+  transform: scale(1.2);
+}
+
+/* Testimonial Card Styles */
+.testimonial-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slider-btn {
+    display: none;
+  }
+
+  .testimonials-container {
+    padding: 0 1rem;
+  }
+}
+
+/* About Doctor Section Styles */
+.doctor-image-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.doctor-image:hover {
+  transform: scale(1.02);
+}
+
+.doctor-info {
+  padding: 2rem;
+}
+
+.credentials-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.credentials-list > li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.credentials-list > li::before {
+  content: '•';
+  color: var(--light-blue);
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.nested-list {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.nested-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.nested-list li::before {
+  content: '–';
+  color: var(--light-blue);
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .doctor-info {
+    padding: 2rem 0;
+    margin-top: 2rem;
+  }
+
+  .credentials-list > li {
+    font-size: 1rem;
+  }
+
+  .nested-list li {
+    font-size: 0.95rem;
+  }
+}
+
+/* FAQ Section Styles */
+.faq-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border: none !important;
+  background: none !important;
+}
+
+.accordion-button {
+  background: white !important;
+  border-radius: 15px !important;
+  padding: 1.5rem 2rem !important;
+  font-size: 1.2rem !important;
+  color: var(--primary-blue) !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--primary-blue) !important;
+  background: white !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.accordion-button:focus {
+  border: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Change the default accordion icon color */
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230047ab'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+.accordion-body {
+  background: white;
+  padding: 2rem !important;
+  color: #666;
+  line-height: 1.6;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Animation for accordion */
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(-180deg);
+}
+
+/* Hover effect */
+.accordion-button:hover {
+  background: #f8f9fa !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .accordion-button {
+    padding: 1.25rem 1.5rem !important;
+    font-size: 1.1rem !important;
+  }
+
+  .accordion-body {
+    padding: 1.5rem !important;
+  }
+}
+
+/* Contact Section Styles - Exact Match */
+.contact-section {
+  background: linear-gradient(180deg, #edf5ff 0%, #edf5ff 100%);
+  padding: 80px 0;
+  position: relative;
+}
+
+.contact-header {
+  text-align: right;
+  margin-bottom: 60px;
+}
+
+.contact-title {
+  color: #0a2472;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Contact Info Styles */
+.contact-info {
+  padding-right: 40px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.contact-details h3 {
+  color: #0a2472;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contact-text {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.social-link {
+  width: 24px;
+  height: 24px;
+}
+
+.social-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(10, 36, 114, 0.05);
+}
+
+.form-title {
+  color: #0a2472;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 2px dotted rgba(10, 36, 114, 0.3);
+  border-radius: 0;
+  padding: 12px 0;
+  color: #0a2472;
+  font-size: 16px;
+}
+
+.form-control::placeholder {
+  color: rgba(10, 36, 114, 0.5);
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #0a2472;
+  background: transparent;
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #0a2472;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 32px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #0d2d8a;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  .contact-title {
+    font-size: 36px;
+  }
+
+  .contact-info {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .contact-form-container {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-form-container {
+    padding: 24px;
+  }
+}
+
+/* Add any other global styles here */
+
+.gradient-bg {
+  background: linear-gradient(180deg, #f1f9fd 0%, #0981c8 100%);
+}
+
+.text-content {
+  color: var(--text-color);
+}

@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.m-bottom {
+  margin-bottom: 40px;
+}
+
+.main-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #001430;
+  text-align: center;
+  text-shadow: 2px 4px 0 rgba(9, 129, 200, 0.2);
+  margin: 0;
+  padding-bottom: 80px;
+}
+
+.sub-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #0d6efd; /* Title color */
+  opacity: 0.9; /* For subtitle */
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.padding {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

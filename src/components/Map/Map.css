@@ -1,0 +1,23 @@
+.map-section {
+  width: 100vw;
+}
+
+.map-container {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 350px;
+  }
+}
