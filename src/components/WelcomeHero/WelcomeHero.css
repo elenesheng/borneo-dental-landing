@@ -1,5 +1,5 @@
 .welcome-hero {
-  padding-top: 120px;
+  padding-top: 80px;
 }
 
 .welcome-hero .location {
@@ -12,7 +12,7 @@
 }
 
 .welcome-hero .hero-title {
-  font-size: 64px;
+  font-size: 50px;
   font-weight: 600;
   color: #001430;
   line-height: 1.2;
@@ -47,7 +47,7 @@
 
 .welcome-hero .hero-image-container {
   position: relative;
-  padding: 2rem;
+  padding: 0;
 }
 
 .welcome-hero .primary-button {
@@ -64,21 +64,21 @@
   transition: transform 0.2s;
 }
 .welcome-hero .hero-background {
-  width: 84%;
+  width: 100%;
   z-index: 1;
 }
 
 .welcome-hero .hero-image {
   position: relative;
   z-index: 2;
-  width: 52%;
+  width: 76%;
   border-radius: 20px;
   position: absolute;
-  right: 124px;
-  top: 14px;
+  /* right: 82px; */
+  top: 82px;
 }
 
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
   .welcome-hero {
     padding-top: 80px;
   }
@@ -92,7 +92,7 @@
     width: 60%;
     right: 80px;
   }
-}
+} */
 
 @media screen and (max-width: 768px) {
   .welcome-hero {
@@ -118,19 +118,10 @@
 
   .welcome-hero .hero-image-container {
     margin-top: 40px;
-    padding: 1rem;
   }
 
   .welcome-hero .hero-image {
-    position: relative;
-    width: 80%;
-    right: auto;
-    top: auto;
-    margin: 0 auto;
-  }
-
-  .welcome-hero .hero-background {
-    width: 100%;
+    top: 45px;
   }
 }
 

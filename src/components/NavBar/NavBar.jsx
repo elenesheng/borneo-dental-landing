@@ -6,23 +6,24 @@ const NavBar = ({ scrollToSection, refs }) => {
   return (
     <Navbar expand="lg" className="navbar-component py-3 fixed-top bg-white">
       <Container>
-        <Navbar.Brand href="#" className="d-flex align-items-center">
-          <img src="/logo.png" alt="Logo" className="tooth-icon me-2" />
+        <Navbar.Brand
+          href="#"
+          className="d-flex align-items-center logo-container"
+        >
+          <img
+            src="/logo-transparent-bg.png"
+            alt="Logo"
+            className="logo me-2"
+          />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav">
-          <div className="d-flex justify-content-between align-items-center w-100">
-            {/* Left: Logo already handled above */}
-
-            {/* Center: Navigation */}
-            <Nav className="mx-auto">
+          <div className="d-flex justify-content-end align-items-center w-100">
+            <Nav>
               <Nav.Link onClick={() => scrollToSection(refs.homeRef)}>
                 Home
-              </Nav.Link>
-              <Nav.Link onClick={() => scrollToSection(refs.servicesRef)}>
-                Services
               </Nav.Link>
               <Nav.Link onClick={() => scrollToSection(refs.testimonialRef)}>
                 Testimonials
@@ -31,13 +32,6 @@ const NavBar = ({ scrollToSection, refs }) => {
                 Contact
               </Nav.Link>
             </Nav>
-
-            {/* Right: CTA Button */}
-            <div>
-              <Button variant="outline-primary" className="appointment-btn">
-                Saca Tu Turno
-              </Button>
-            </div>
           </div>
         </Navbar.Collapse>
       </Container>

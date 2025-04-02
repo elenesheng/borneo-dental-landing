@@ -1,0 +1,128 @@
+.ImageTextCard-section {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.ImageTextCard-section.left-media {
+  flex-direction: row;
+}
+
+.ImageTextCard-section.right-media {
+  flex-direction: row-reverse;
+}
+
+.ImageTextCard-media-container {
+  max-width: 48%;
+}
+
+.ImageTextCard-media {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.ImageTextCard-info {
+  width: 55%;
+  padding: 1rem;
+}
+
+.ImageTextCard-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #001430;
+}
+
+.ImageTextCard-text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.ImageTextCard-text > ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.cta-group {
+  margin-top: 2rem;
+}
+
+.primary-button {
+  background-color: #0981c8;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+  box-shadow: 8px 8px 0 #001430;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.services-link {
+  font-size: 16px;
+  font-weight: 400;
+  color: #525252;
+  text-decoration: none;
+  border-bottom: 1px solid #525252;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  border-radius: 0;
+}
+
+.services-link:hover {
+  color: #0981c8;
+  border-color: #0981c8;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .ImageTextCard-section.left-media,
+  .ImageTextCard-section.right-media {
+    flex-direction: column;
+  }
+
+  .ImageTextCard-media-container,
+  .ImageTextCard-info {
+    width: 100%;
+  }
+
+  .primary-button {
+    padding: 10px 24px;
+    font-size: 16px;
+    box-shadow: 6px 6px 0 #001430;
+  }
+
+  .services-link {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .primary-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .doctor-info {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+
+  .doctor-name {
+    font-size: 36px;
+  }
+}

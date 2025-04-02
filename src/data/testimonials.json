@@ -1,19 +1,46 @@
 {
   "testimonials": [
     {
-      "name": "Matias Gomez",
-      "rating": 4,
-      "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit conubia, massa facilisi lectus ullamcorper ridiculus potenti iaculis nibh, interdum faucibus ad diam vivamus vehicula fames."
+      "id": 1,
+      "text": "I didn't know aligners could solve my crowding. Dr. Ghana explained everything so clearly and showed my 3D model. I felt confident, informed, and cared for.",
+      "name": "Emily T.",
+      "stars": 5
     },
     {
-      "name": "Maria Paz",
-      "rating": 3,
-      "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit conubia, massa facilisi lectus ullamcorper ridiculus potenti iaculis nibh, interdum faucibus ad diam vivamus vehicula fames."
+      "id": 2,
+      "text": "I always feared braces — but this clinic gave me options. The results? Life-changing.",
+      "name": "Adam K.",
+      "stars": 5
     },
     {
-      "name": "Silvia Rios",
-      "rating": 5,
-      "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit conubia, massa facilisi lectus ullamcorper ridiculus potenti iaculis nibh, interdum faucibus ad diam vivamus vehicula fames."
+      "id": 3,
+      "text": "The staffs there are professional. They know what they are doing and they genuinely care about your wellbeing.",
+      "name": "Yvonne",
+      "stars": 5
+    },
+    {
+      "id": 4,
+      "text": "They provide you with treatment plans that are kind to your pockets and with long lasting effects. I would definitely recommend Dr Puven and Dr Ghana to anyone who is looking for dentist to take care of their oral health in the long term!",
+      "name": "Rebecca S.",
+      "stars": 5
+    },
+    {
+      "id": 5,
+      "text": "This dental clinic is great! The staff is friendly and helpful, and the orthodontists really know what they're doing. The place is clean and comfortable, making every visit pleasant. They explain everything clearly, from treatment to aftercare.",
+      "name": "Nur Hafisya",
+      "stars": 5
+    },
+    {
+      "id": 6,
+      "text": "Great experience! Setting appointment was easy, they're ready to explain any question asked. Doc explain treatment plan details before proceed futher. Fixings also went smoothly with no pain 😁",
+      "name": "Adeline J.",
+      "stars": 5
+    },
+    {
+      "id": 7,
+      "text": "Doctor and staff was great, gentle and kind 👍🏼 (they're so friendly, so no worries) Environment is clean ☺️ Reasonable price 😎",
+      "name": "Lisa",
+      "stars": 5
     }
   ]
 }

@@ -13,11 +13,11 @@ const GetInTouch = () => {
               <i className="bi bi-geo-alt"></i>
             </div>
             <div className="info">
-              <h3>Dirección</h3>
+              <h3>Clinic Location</h3>
               <p>
-                Av. Color 1560
+                Kota Kinabalu (Fu Yen and Bundusan)
                 <br />
-                Cordoba, Cordoba Capital
+                Kuala Lumpur (Vital+ Dental Jalan SS 21/39, Damansara Utama, PJ)
               </p>
             </div>
           </Col>
@@ -28,11 +28,7 @@ const GetInTouch = () => {
             </div>
             <div className="info">
               <h3>Email</h3>
-              <p>
-                info@tudentista.com.ar
-                <br />
-                info@tudentista.com.ar
-              </p>
+              <p>admin@borneodentalcentre.com</p>
             </div>
           </Col>
 
@@ -41,11 +37,11 @@ const GetInTouch = () => {
               <i className="bi bi-telephone"></i>
             </div>
             <div className="info">
-              <h3>Telefonos</h3>
+              <h3>Telephone</h3>
               <p>
-                351 7608XXX
+                KK +60 19-733 1020
                 <br />
-                3541 7825XXX
+                KL +60 13-588 1213
               </p>
             </div>
           </Col>

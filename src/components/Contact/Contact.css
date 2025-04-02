@@ -2,6 +2,19 @@
   background: linear-gradient(180deg, #f1f9fd 0%, #0981c8 100%);
 }
 
+.main-title {
+  color: #0981c8;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.contact-subtitle {
+  color: #525252;
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
 .section-subtitle {
   color: #ffffff;
   font-size: 16px;
@@ -70,7 +83,7 @@
   display: flex;
   gap: 24px;
   margin-top: 40px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .social-link {
@@ -165,6 +178,55 @@ textarea.form-control {
 .submit-button:hover {
   background: rgba(255, 255, 255, 0.9);
   transform: translateY(-2px);
+}
+
+/* Custom file upload styling */
+.custom-file-upload-container {
+  margin-bottom: 40px;
+}
+
+.file-upload-field {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 16px 0;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+}
+
+.upload-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #ffffff;
+}
+
+.upload-text {
+  display: block;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.upload-instruction {
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 8px;
+  opacity: 0.8;
+  display: block;
+}
+
+.selected-files {
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 8px;
+  opacity: 0.8;
 }
 
 @media (max-width: 991px) {
@@ -278,4 +340,47 @@ textarea.form-control {
 .contact-form input,
 .contact-form textarea {
   color: #525252;
+}
+
+/* Submission message styles */
+.submission-message {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.submission-message.success {
+  background-color: rgba(40, 167, 69, 0.2);
+  border: 1px solid rgba(40, 167, 69, 0.4);
+  color: #155724;
+}
+
+.submission-message.error {
+  background-color: rgba(220, 53, 69, 0.2);
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  color: #721c24;
+}
+
+.submit-button:disabled {
+  background: rgba(255, 255, 255, 0.7);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Validation error styling */
+.validation-error {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.form-control.is-invalid {
+  border-bottom: 2px solid #ff6b6b !important;
+}
+
+.file-upload-field.is-invalid {
+  border-bottom: 2px solid #ff6b6b;
 }
