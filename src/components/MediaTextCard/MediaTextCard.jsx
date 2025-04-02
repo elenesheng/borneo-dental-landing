@@ -15,12 +15,28 @@ const MediaTextCard = ({
   scrollToSection,
   contactRef,
 }) => {
+  // Check if the media is a Google Drive link
+  const isGoogleDriveVideo =
+    mediaType === 'video' && media && media.includes('drive.google.com');
+
   const mediaContent =
     mediaType === 'video' ? (
-      <video controls className="ImageTextCard-media">
-        <source src={media} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      isGoogleDriveVideo ? (
+        <iframe
+          src={media}
+          className="ImageTextCard-media video-iframe"
+          width="600"
+          height="400"
+          frameBorder="0"
+          allowFullScreen
+          title={title || 'Video'}
+        ></iframe>
+      ) : (
+        <video controls className="ImageTextCard-media">
+          <source src={media} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )
     ) : (
       <img src={media} alt={title} className="ImageTextCard-media" />
     );

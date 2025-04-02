@@ -76,7 +76,7 @@ const LandingPage = () => {
       />
       <MediaTextCard
         title="Why Choose Borneo Dental Centre?"
-        media="/horizontall.mp4"
+        media="https://drive.google.com/file/d/1UFnQfDNkKJriLxSCYMUf9-MbH_T8Z3lh/preview"
         position="left"
         mediaType="video"
         isButtonVisible={false}
@@ -114,7 +114,10 @@ const LandingPage = () => {
         scrollToSection={scrollToSection}
         contactRef={contactRef}
       />
-      <VideoSection videoSrc="/veneers-vs-aligners.mp4" />
+      <VideoSection
+        title="Veneers vs Aligners: Which Is Right For You?"
+        videoSrc="https://drive.google.com/file/d/11DSQnl-80LgV5kHLMsw60v26lzH5szL_/preview"
+      />
       <Contact forwardedRef={contactRef} />
       <Map />
     </div>
