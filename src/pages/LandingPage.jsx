@@ -49,7 +49,7 @@ const LandingPage = () => {
         scrollToSection={scrollToSection}
         contactRef={contactRef}
       />
-      <GetInTouch />
+      <Features />
       <MediaTextCard
         media="/first-impression.png"
         title=" Your Smile Shouldn't Age You"
@@ -62,7 +62,8 @@ const LandingPage = () => {
         contactRef={contactRef}
         flexPosition="center"
       />
-      <Features />
+      <GetInTouch />
+
       <MediaTextCard
         media="/aligners.png"
         title="Snap & Send: It's That Simple"
@@ -123,7 +124,6 @@ const LandingPage = () => {
         flexPosition="start"
       />
       <Testimonials forwardedRef={testimonialRef} />
-      <FAQ />
       <MediaTextCard
         media="https://drive.google.com/file/d/11DSQnl-80LgV5kHLMsw60v26lzH5szL_/preview"
         title="Ready to See if Aligners Are Right for You?"
@@ -135,6 +135,7 @@ const LandingPage = () => {
         contactRef={contactRef}
         flexPosition="center"
       />
+      <FAQ />
       <Contact forwardedRef={contactRef} />
       <Map />
     </div>

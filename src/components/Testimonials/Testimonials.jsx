@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import testimonialData from '../../data/testimonials.json';
 import './Testimonials.css';
@@ -8,13 +8,6 @@ const Testimonials = ({ forwardedRef }) => {
   const { testimonials } = testimonialData;
   const testimonialsPerPage = 3;
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalPages);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [totalPages]);
 
   const renderStars = (stars) => {
     return [...Array(5)].map((_, index) => (
