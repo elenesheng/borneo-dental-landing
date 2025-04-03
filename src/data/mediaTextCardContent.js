@@ -49,9 +49,9 @@ export const beforeYouDecideContent = (
   <>
     <p>
       Before you decide on braces or aligners, take a few minutes to hear
-      directly from Dr. Ghana, a DSD-trained expert with over 700 smile
-      transformations under his care. In this honest, doctor-led video, you'll
-      learn:
+      directly from Dr.Ghana, a DSD-trained expert with over 700 smile
+      transformations under his care. <br />
+      In this honest, doctor-led video, you'll learn:
     </p>
     <p>
       <br /> 🦷 Why traditional braces are often uncomfortable, restrictive, and
@@ -71,7 +71,6 @@ export const beforeYouDecideContent = (
       pitch — it's what you need to know before making a confident, informed
       decision.
     </p>
-    <p> Press play to watch the full explanation by Dr. Ghana. 👇</p>
   </>
 );
 
@@ -81,7 +80,7 @@ export const truthContent = (
       ✔️ Not everyone qualifies for aligners
       <br /> ✔️ Misaligned teeth can cause long-term oral health issues
       <br /> ✔️ And choosing the wrong method can delay your results That's why
-      we offer this photo pre-assessment, so you only invest in the right
+      we offer this photo pre-assessment, <br /> so you only invest in the right
       solution from the start.
     </p>
   </>
@@ -93,9 +92,9 @@ export const whyChooseContent = (
     <p>
       Our founder, Dr. Ghana, isn't just a dentist — he's a Digital Smile Design
       (DSD) certified practitioner, trained in Spain, who combines cutting-edge
-      dental tech with aesthetic mastery. He believes every smile is unique, and
-      so is the treatment behind it. Our team consists of highly experienced
-      dentists.
+      dental tech with aesthetic mastery. <br /> He believes every smile is
+      unique, and so is the treatment behind it. Our team consists of highly
+      experienced dentists.
     </p>
     <p>
       "Small changes in your teeth can bring big changes to your life. I'm here
@@ -109,11 +108,11 @@ export const approachContent = (
     <p>
       Led by internationally trained Dr. Ghana, we combine cutting-edge digital
       diagnostics with human-centered care to deliver honest, personalized
-      treatment plans tailored to your smile, age, and lifestyle. Whether you're
-      exploring clear aligners, braces, or a complete smile makeover, our
-      approach goes beyond aesthetics. We look at bite pressure, long-term wear,
-      gum health, and facial support — so you get results that not only look
-      good, but feel right and last longer.
+      treatment plans tailored to your smile, age, and lifestyle. <br /> Whether
+      you're exploring clear aligners, braces, or a complete smile makeover, our
+      approach goes beyond aesthetics. <br /> We look at bite pressure,
+      long-term wear, gum health, and facial support — so you get results that
+      not only look good, but feel right and last longer.
     </p>
     <p>
       <br /> ✓ Doctor-Led, Not Sales-Led Your treatment is reviewed and

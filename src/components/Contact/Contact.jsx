@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Contact.css';
@@ -6,14 +6,6 @@ import './Contact.css';
 // Import the extracted components
 import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
-
-// Import utility services
-import { sendEmail, sanitizeFileName } from './EmailService';
-import {
-  validateForm,
-  validateFileTypes,
-  checkFileSizes,
-} from './FormValidation';
 
 const Contact = ({ forwardedRef }) => {
   const fileInputRef = useRef(null);
@@ -33,9 +25,8 @@ const Contact = ({ forwardedRef }) => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [submitMessage, setSubmitMessage] = useState('');
-  const [validationErrors, setValidationErrors] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -43,52 +34,13 @@ const Contact = ({ forwardedRef }) => {
       ...prev,
       [name]: value,
     }));
-
-    // Clear validation error when field is edited
-    if (validationErrors[name]) {
-      setValidationErrors((prev) => ({
-        ...prev,
-        [name]: null,
-      }));
-    }
   };
 
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
-
-    // Validate file types
-    const { validFiles, error } = validateFileTypes(files);
-
-    if (error) {
-      setValidationErrors((prev) => ({
-        ...prev,
-        images: error,
-      }));
-    } else {
-      setValidationErrors((prev) => ({
-        ...prev,
-        images: null,
-      }));
-    }
-
-    // Sanitize file names
-    const sanitizedFiles = validFiles.map((file) => {
-      const sanitizedName = sanitizeFileName(file.name);
-      return new File([file], sanitizedName, { type: file.type });
-    });
-
-    // Check file sizes
-    const { error: sizeError } = checkFileSizes(sanitizedFiles);
-    if (sizeError) {
-      setValidationErrors((prev) => ({
-        ...prev,
-        images: sizeError,
-      }));
-    }
-
     setFormData((prev) => ({
       ...prev,
-      images: sanitizedFiles,
+      images: files,
     }));
   };
 
@@ -96,27 +48,18 @@ const Contact = ({ forwardedRef }) => {
     fileInputRef.current.click();
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate the form first
-    const errors = validateForm(formData);
-    setValidationErrors(errors);
-
-    if (Object.keys(errors).length > 0) {
-      return;
-    }
-
     setIsSubmitting(true);
-    setSubmitStatus(null);
-    setSubmitMessage('');
 
-    try {
-      await sendEmail(formData);
+    // Simulate form submission
+    setTimeout(() => {
       setSubmitStatus('success');
       setSubmitMessage(
         'Thank you! Your assessment request has been submitted successfully.'
       );
+
       // Reset form after successful submission
       setFormData({
         name: '',
@@ -126,26 +69,16 @@ const Contact = ({ forwardedRef }) => {
         images: [],
         source: buttonOptions[0],
       });
-    } catch (error) {
-      setSubmitStatus('error');
-      setSubmitMessage(
-        'Sorry, there was a problem submitting your request. Please try again or contact us directly.'
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
-  // Clear status message after 5 seconds
-  useEffect(() => {
-    if (submitStatus) {
-      const timer = setTimeout(() => {
+      setIsSubmitting(false);
+
+      // Clear status message after 5 seconds
+      setTimeout(() => {
         setSubmitStatus(null);
         setSubmitMessage('');
       }, 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [submitStatus]);
+    }, 1000);
+  };
 
   return (
     <section ref={forwardedRef} className="contact-section padding">
@@ -166,7 +99,6 @@ const Contact = ({ forwardedRef }) => {
             <ContactForm
               formData={formData}
               buttonOptions={buttonOptions}
-              validationErrors={validationErrors}
               isSubmitting={isSubmitting}
               handleInputChange={handleInputChange}
               handleImageChange={handleImageChange}

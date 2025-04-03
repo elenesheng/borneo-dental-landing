@@ -9,7 +9,6 @@ import Contact from '../components/Contact/Contact';
 import Map from '../components/Map/Map';
 import Features from '../components/Features/Features';
 import ImageSection from '../components/ImageSection/ImageSection';
-import VideoSection from '../components/VideoSection/VideoSection';
 import {
   introContent,
   snapSendContent,
@@ -18,6 +17,7 @@ import {
   whyChooseContent,
   approachContent,
 } from '../data/mediaTextCardContent';
+import '../pages/LandingPage.css';
 
 const LandingPage = () => {
   // Create refs for each section
@@ -39,7 +39,10 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="landing-page">
+    <div
+      className="landing-page"
+      style={{ position: 'relative', zIndex: 1, minHeight: '100vh' }}
+    >
       <NavBar scrollToSection={scrollToSection} refs={refs} />
       <WelcomeHero
         forwardedRef={homeRef}
@@ -54,9 +57,10 @@ const LandingPage = () => {
         position="left"
         mediaType="image"
         isButtonVisible={true}
-        primaryButtonText="Start My Smile Pre-assessment"
+        primaryButtonText="Start With a Simple Smile Pre-Check"
         scrollToSection={scrollToSection}
         contactRef={contactRef}
+        flexPosition="center"
       />
       <Features />
       <MediaTextCard
@@ -66,14 +70,28 @@ const LandingPage = () => {
         position="right"
         mediaType="image"
         isButtonVisible={true}
-        primaryButtonText="Check If I'm Suitable for Aligners"
+        primaryButtonText="Start With a Simple Smile Pre-Check"
         scrollToSection={scrollToSection}
         contactRef={contactRef}
+        flexPosition="center"
       />
-      <ImageSection
-        title="The Six common dental issues that clear aligners can help with:"
-        image="/image-right.png"
-      />
+      <div
+        className="d-flex padding"
+        style={{ flexDirection: 'row', flexWrap: 'wrap' }}
+      >
+        <div style={{ width: '50%', flex: '1 1 300px', minWidth: '300px' }}>
+          <ImageSection
+            title="The Six common dental issues that clear aligners can help with:"
+            image="/image-right.png"
+          />
+        </div>
+        <div style={{ width: '50%', flex: '1 1 300px', minWidth: '300px' }}>
+          <ImageSection
+            title="Aligners vs Braces: What's Right for You?"
+            image="/image-left.png"
+          />
+        </div>
+      </div>
       <MediaTextCard
         title="Why Choose Borneo Dental Centre?"
         media="https://drive.google.com/file/d/1UFnQfDNkKJriLxSCYMUf9-MbH_T8Z3lh/preview"
@@ -81,11 +99,9 @@ const LandingPage = () => {
         mediaType="video"
         isButtonVisible={false}
         content={whyChooseContent}
+        flexPosition="center"
       />
-      <ImageSection
-        title="Aligners vs Braces: What's Right for You?"
-        image="/image-left.png"
-      />
+
       <MediaTextCard
         media="/dentist.png"
         title="But here's the truth:"
@@ -93,30 +109,31 @@ const LandingPage = () => {
         position="right"
         mediaType="image"
         isButtonVisible={true}
-        primaryButtonText="Start My Smile Pre-assessment"
+        primaryButtonText="Explore My Age-Reversing Smile Options"
         scrollToSection={scrollToSection}
         contactRef={contactRef}
+        flexPosition="center"
       />
-      <ImageSection
+      <MediaTextCard
+        media="/ctscan.png"
         title="At Borneo Dental Centre, we don't just straighten teeth — we restore confidence, function, and long-term oral health."
-        image="/ctscan.png"
         content={approachContent}
+        mediaType="image"
+        isButtonVisible={false}
+        flexPosition="start"
       />
       <Testimonials forwardedRef={testimonialRef} />
       <FAQ />
       <MediaTextCard
-        media="/first-impression.png"
+        media="https://drive.google.com/file/d/11DSQnl-80LgV5kHLMsw60v26lzH5szL_/preview"
         title="Ready to See if Aligners Are Right for You?"
         content={beforeYouDecideContent}
-        mediaType="image"
+        mediaType="video"
         isButtonVisible={true}
         primaryButtonText="Start My Smile Pre-assessment"
         scrollToSection={scrollToSection}
         contactRef={contactRef}
-      />
-      <VideoSection
-        title="Veneers vs Aligners: Which Is Right For You?"
-        videoSrc="https://drive.google.com/file/d/11DSQnl-80LgV5kHLMsw60v26lzH5szL_/preview"
+        flexPosition="center"
       />
       <Contact forwardedRef={contactRef} />
       <Map />

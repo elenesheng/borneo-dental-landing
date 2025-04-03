@@ -8,7 +8,7 @@ const WelcomeHero = ({ forwardedRef, scrollToSection, contactRef }) => {
       <Container className="hero-section py-5">
         <Row className="align-items-center">
           <Col lg={5}>
-            <span className="location">Kuala Lumpur</span>
+            <span className="location">Kota Kinabalu, Kuala Lumpur</span>
             <h2 className="hero-title">
               Get a Professional Smile Pre-Diagnosis Without Leaving Home
             </h2>
@@ -23,7 +23,7 @@ const WelcomeHero = ({ forwardedRef, scrollToSection, contactRef }) => {
                 className="me-3 primary-button"
                 onClick={() => scrollToSection(contactRef)}
               >
-                Check If I'm Suitable for Clear Aligner
+                Reverse Aging with Smile Alignment
               </Button>
             </div>
           </Col>
@@ -31,12 +31,12 @@ const WelcomeHero = ({ forwardedRef, scrollToSection, contactRef }) => {
             <div className="hero-image-container d-flex justify-content-center">
               <img
                 src="/rec.png"
-                alt="Background shape"
+                alt="Decorative geometric background element for Borneo Dental Centre hero section"
                 className="hero-background"
               />
               <img
-                src="/dental-section.png"
-                alt="Tratamiento dental"
+                src="/reverse-age.png"
+                alt="Professional smile alignment treatment showing the anti-aging effects of proper dental care"
                 className="hero-image"
               />
             </div>

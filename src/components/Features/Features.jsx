@@ -4,24 +4,31 @@ import './Features.css';
 const Features = () => {
   const features = [
     {
-      icon: 'bi-gem',
-      title: "Malaysia's Diamond Provider",
-      isCustom: false,
+      imgSrc: '/doctor-icon.png',
+      title: 'Expert Dental Professionals',
+      altText:
+        'Icon representing professional dentists at Borneo Dental Centre',
     },
     {
-      imgSrc: '/toothIcon.png',
-      title: 'Pain-Free Technology',
-      isCustom: true,
+      imgSrc: '/tooth-icon.png',
+      title: 'Advanced Dental Care',
+      altText: 'Tooth icon symbolizing quality dental treatments and care',
     },
     {
-      icon: 'bi-calculator',
-      title: 'Affordable Plans',
-      isCustom: false,
+      imgSrc: '/currency-icon.png',
+      title: 'Affordable Treatment Options',
+      altText: 'Currency icon representing cost-effective dental solutions',
     },
     {
-      imgSrc: '/doctorIcon.png',
-      title: 'Skilled Dental Professionals',
-      isCustom: true,
+      imgSrc: '/heart-icon.png',
+      title: 'Patient-Centered Approach',
+      altText:
+        'Heart icon showing our commitment to compassionate patient care',
+    },
+    {
+      imgSrc: '/digital-icon.png',
+      title: 'Digital Dental Solutions',
+      altText: 'Digital technology icon representing modern dental diagnostics',
     },
   ];
 
@@ -29,18 +36,16 @@ const Features = () => {
     <section className="features-section padding">
       <div className="features-wrapper">
         {features.map((feature, index) => (
-          <div key={index} className="feature-item">
+          <div
+            key={index}
+            className="feature-item"
+            style={{ animationDelay: `${index * 0.15}s` }}
+          >
             <div className="feature-box">
-              {feature.isCustom ? (
-                <img
-                  src={feature.imgSrc}
-                  alt={feature.title}
-                  className="feature-icon"
-                />
-              ) : (
-                <i className={`bi ${feature.icon}`}></i>
-              )}
-              <h3>{feature.title}</h3>
+              <img
+                src={feature.imgSrc}
+                alt={feature.altText || feature.title}
+              />
             </div>
           </div>
         ))}

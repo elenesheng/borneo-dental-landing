@@ -3,7 +3,7 @@ import './ImageSection.css';
 
 const ImageSection = ({ title, image, content }) => {
   return (
-    <div className="full-section padding">
+    <div className="full-section">
       <h3 className="main-title">{title}</h3>
       <img src={image} alt={title} />
       {content && <div className="section-content">{content}</div>}

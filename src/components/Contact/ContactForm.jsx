@@ -4,7 +4,6 @@ import { Form } from 'react-bootstrap';
 const ContactForm = ({
   formData,
   buttonOptions,
-  validationErrors,
   isSubmitting,
   handleInputChange,
   handleImageChange,
@@ -43,16 +42,11 @@ const ContactForm = ({
             type="text"
             name="name"
             placeholder="Your Name"
-            className={`form-control ${
-              validationErrors.name ? 'is-invalid' : ''
-            }`}
+            className="form-control"
             value={formData.name}
             onChange={handleInputChange}
             required
           />
-          {validationErrors.name && (
-            <div className="validation-error">{validationErrors.name}</div>
-          )}
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -60,16 +54,11 @@ const ContactForm = ({
             type="email"
             name="email"
             placeholder="Your Email"
-            className={`form-control ${
-              validationErrors.email ? 'is-invalid' : ''
-            }`}
+            className="form-control"
             value={formData.email}
             onChange={handleInputChange}
             required
           />
-          {validationErrors.email && (
-            <div className="validation-error">{validationErrors.email}</div>
-          )}
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -77,16 +66,11 @@ const ContactForm = ({
             type="tel"
             name="phone"
             placeholder="Your Phone Number"
-            className={`form-control ${
-              validationErrors.phone ? 'is-invalid' : ''
-            }`}
+            className="form-control"
             value={formData.phone}
             onChange={handleInputChange}
             required
           />
-          {validationErrors.phone && (
-            <div className="validation-error">{validationErrors.phone}</div>
-          )}
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -95,25 +79,15 @@ const ContactForm = ({
             name="message"
             rows={4}
             placeholder="Tell us about your dental concerns..."
-            className={`form-control ${
-              validationErrors.message ? 'is-invalid' : ''
-            }`}
+            className="form-control"
             value={formData.message}
             onChange={handleInputChange}
             required
           />
-          {validationErrors.message && (
-            <div className="validation-error">{validationErrors.message}</div>
-          )}
         </Form.Group>
 
         <Form.Group className="custom-file-upload-container mb-3">
-          <div
-            className={`file-upload-field ${
-              validationErrors.images ? 'is-invalid' : ''
-            }`}
-            onClick={triggerFileInput}
-          >
+          <div className="file-upload-field" onClick={triggerFileInput}>
             <i className="bi bi-cloud-arrow-up-fill upload-icon"></i>
             <span className="upload-text">
               {formData.images.length
@@ -124,9 +98,6 @@ const ContactForm = ({
           <span className="upload-instruction">
             Please include clear photos of your upper and lower teeth
           </span>
-          {validationErrors.images && (
-            <div className="validation-error">{validationErrors.images}</div>
-          )}
           <input
             ref={fileInputRef}
             type="file"

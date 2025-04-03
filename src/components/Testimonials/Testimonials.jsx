@@ -18,7 +18,11 @@ const Testimonials = ({ forwardedRef }) => {
 
   const renderStars = (stars) => {
     return [...Array(5)].map((_, index) => (
-      <span key={index} className="star active">
+      <span
+        key={index}
+        className="star active"
+        style={{ '--star-index': index }}
+      >
         ★
       </span>
     ));
@@ -38,12 +42,7 @@ const Testimonials = ({ forwardedRef }) => {
             {getVisibleTestimonials().map((testimonial, index) => (
               <div
                 key={testimonial.id}
-                className="testimonial-card"
-                style={{
-                  opacity: 1,
-                  transform: 'translateX(0)',
-                  transition: 'all 0.5s ease',
-                }}
+                className={`testimonial-card testimonial-card-${index}`}
               >
                 <div className="testimonial-rating">
                   {renderStars(testimonial.stars)}

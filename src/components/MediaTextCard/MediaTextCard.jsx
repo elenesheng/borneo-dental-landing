@@ -14,10 +14,22 @@ const MediaTextCard = ({
   primaryButtonText = 'Book Appointment',
   scrollToSection,
   contactRef,
+  flexPosition = 'center',
+  altText,
 }) => {
   // Check if the media is a Google Drive link
   const isGoogleDriveVideo =
     mediaType === 'video' && media && media.includes('drive.google.com');
+
+  // Generate SEO-friendly alt text if not provided
+  const generateAltText = () => {
+    if (altText) return altText;
+
+    // If no custom alt text provided, create a descriptive one based on title
+    return title
+      ? `${title} - Borneo Dental Centre professional dental service image`
+      : 'Dental treatment and clear aligner services at Borneo Dental Centre';
+  };
 
   const mediaContent =
     mediaType === 'video' ? (
@@ -29,7 +41,9 @@ const MediaTextCard = ({
           height="400"
           frameBorder="0"
           allowFullScreen
-          title={title || 'Video'}
+          title={
+            title || 'Video about dental treatments at Borneo Dental Centre'
+          }
         ></iframe>
       ) : (
         <video controls className="ImageTextCard-media">
@@ -38,7 +52,11 @@ const MediaTextCard = ({
         </video>
       )
     ) : (
-      <img src={media} alt={title} className="ImageTextCard-media" />
+      <img
+        src={media}
+        alt={generateAltText()}
+        className="ImageTextCard-media"
+      />
     );
 
   const renderButtons = () => {
@@ -61,7 +79,7 @@ const MediaTextCard = ({
   return (
     <section
       ref={forwardedRef}
-      className={`ImageTextCard-section padding ${position}-media`}
+      className={`ImageTextCard-section padding ${position}-media ${flexPosition}-aligned`}
     >
       {position === 'left' ? (
         <>
