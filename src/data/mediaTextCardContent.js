@@ -36,7 +36,9 @@ export const snapSendContent = (
       <br /> ✓ Privacy assured – we follow ethical standards and patient
       confidentiality
     </p>
-    <p>Why this matters:</p>
+    <p>
+      <b>Why this matters:</b>
+    </p>
     <p>
       Not every smile is suited for aligners. Some conditions are better treated
       with braces or other approaches. This pre-diagnosis ensures you only move

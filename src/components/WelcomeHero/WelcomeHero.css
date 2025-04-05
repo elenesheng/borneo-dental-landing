@@ -13,12 +13,21 @@
 }
 
 .welcome-hero .hero-title {
-  font-size: 50px;
+  font-size: 57px;
   font-weight: 600;
   color: #001430;
   line-height: 1.2;
   margin: 0;
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+/* Mobile hero image that appears between title and description */
+.welcome-hero .mobile-hero-image {
+  margin: 15px 0;
+  height: 220px;
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
   opacity: 0;
   animation-fill-mode: both;
 }
@@ -114,6 +123,20 @@
     text-align: center;
   }
 
+  /* Fix for correct order on mobile */
+  .welcome-hero .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .welcome-hero .order-0 {
+    order: 0;
+  }
+
+  .welcome-hero .order-1 {
+    order: 1;
+  }
+
   .welcome-hero .hero-title,
   .welcome-hero .hero-primary {
     font-size: 36px;
@@ -131,10 +154,10 @@
   }
 
   .welcome-hero .hero-image-container {
-    margin-top: 40px;
+    margin-top: 0;
   }
 
-  .welcome-hero .hero-image {
+  .welcome-hero .mobile-hero-image .hero-image {
     top: 45px;
   }
 }
@@ -151,6 +174,14 @@
 
   .welcome-hero .services-link {
     font-size: 14px;
+  }
+
+  .welcome-hero .mobile-hero-image {
+    height: 180px;
+  }
+
+  .welcome-hero .mobile-hero-image .hero-image {
+    top: 30px;
   }
 }
 

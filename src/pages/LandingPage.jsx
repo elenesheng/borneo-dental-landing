@@ -68,7 +68,7 @@ const LandingPage = () => {
         media="/aligners.png"
         title="Snap & Send: It's That Simple"
         content={snapSendContent}
-        position="right"
+        position="left"
         mediaType="image"
         isButtonVisible={true}
         primaryButtonText="Start With a Simple Smile Pre-Check"
@@ -86,7 +86,10 @@ const LandingPage = () => {
             image="/image-right.png"
           />
         </div>
-        <div style={{ width: '50%', flex: '1 1 300px', minWidth: '300px' }}>
+        <div
+          style={{ width: '50%', flex: '1 1 300px', minWidth: '300px' }}
+          className="right-image"
+        >
           <ImageSection
             title="Aligners vs Braces: What's Right for You?"
             image="/image-left.png"
@@ -107,7 +110,7 @@ const LandingPage = () => {
         media="/dentist.png"
         title="But here's the truth:"
         content={truthContent}
-        position="right"
+        position="left"
         mediaType="image"
         isButtonVisible={true}
         primaryButtonText="Explore My Age-Reversing Smile Options"
@@ -117,6 +120,8 @@ const LandingPage = () => {
       />
       <MediaTextCard
         media="/ctscan.png"
+        secondaryMedia="/whattodo.png"
+        secondaryMediaAltText="Detailed view of digital dental scanning equipment at Borneo Dental Centre"
         title="At Borneo Dental Centre, we don't just straighten teeth — we restore confidence, function, and long-term oral health."
         content={approachContent}
         mediaType="image"

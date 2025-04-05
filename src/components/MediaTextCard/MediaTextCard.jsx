@@ -5,6 +5,8 @@ import './MediaTextCard.css';
 const MediaTextCard = ({
   forwardedRef,
   media,
+  secondaryMedia,
+  secondaryMediaAltText,
   title,
   subtitle,
   content,
@@ -29,6 +31,15 @@ const MediaTextCard = ({
     return title
       ? `${title} - Borneo Dental Centre professional dental service image`
       : 'Dental treatment and clear aligner services at Borneo Dental Centre';
+  };
+
+  // Generate alt text for secondary image
+  const generateSecondaryAltText = () => {
+    if (secondaryMediaAltText) return secondaryMediaAltText;
+
+    return title
+      ? `Additional image for ${title} - Borneo Dental Centre dental services`
+      : 'Additional dental treatment image at Borneo Dental Centre';
   };
 
   const mediaContent =
@@ -59,6 +70,15 @@ const MediaTextCard = ({
       />
     );
 
+  // Render secondary image if provided
+  const secondaryMediaContent = secondaryMedia && (
+    <img
+      src={secondaryMedia}
+      alt={generateSecondaryAltText()}
+      className="ImageTextCard-secondary-media"
+    />
+  );
+
   const renderButtons = () => {
     if (!isButtonVisible || mediaType === 'video') return null;
 
@@ -76,14 +96,28 @@ const MediaTextCard = ({
     );
   };
 
-  return (
-    <section
-      ref={forwardedRef}
-      className={`ImageTextCard-section padding ${position}-media ${flexPosition}-aligned`}
-    >
+  // Special component for mobile view - this will reorder elements
+  const MobileView = () => (
+    <div className="d-md-none mobile-view">
+      <h2 className="ImageTextCard-title">{title}</h2>
+      <div className="ImageTextCard-media-container">
+        {mediaContent}
+        {secondaryMediaContent}
+      </div>
+      <div className="ImageTextCard-text">{content}</div>
+      {renderButtons()}
+    </div>
+  );
+
+  // Desktop view remains unchanged
+  const DesktopView = () => (
+    <div className="d-none d-md-flex ImageTextCard-section-inner padding">
       {position === 'left' ? (
         <>
-          <div className="ImageTextCard-media-container">{mediaContent}</div>
+          <div className="ImageTextCard-media-container">
+            {mediaContent}
+            {secondaryMediaContent}
+          </div>
           <div className="ImageTextCard-info">
             <h2 className="ImageTextCard-title">{title}</h2>
             <div className="ImageTextCard-text">{content}</div>
@@ -97,9 +131,22 @@ const MediaTextCard = ({
             <div className="ImageTextCard-text">{content}</div>
             {renderButtons()}
           </div>
-          <div className="ImageTextCard-media-container">{mediaContent}</div>
+          <div className="ImageTextCard-media-container">
+            {mediaContent}
+            {secondaryMediaContent}
+          </div>
         </>
       )}
+    </div>
+  );
+
+  return (
+    <section
+      ref={forwardedRef}
+      className={`ImageTextCard-section padding ${position}-media ${flexPosition}-aligned`}
+    >
+      <MobileView />
+      <DesktopView />
     </section>
   );
 };
