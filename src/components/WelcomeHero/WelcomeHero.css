@@ -26,7 +26,6 @@
 /* Mobile hero image that appears between title and description */
 .welcome-hero .mobile-hero-image {
   margin: 15px 0;
-  height: 220px;
   animation: fadeInUp 0.8s ease-out 0.3s forwards;
   opacity: 0;
   animation-fill-mode: both;
@@ -174,10 +173,6 @@
 
   .welcome-hero .services-link {
     font-size: 14px;
-  }
-
-  .welcome-hero .mobile-hero-image {
-    height: 180px;
   }
 
   .welcome-hero .mobile-hero-image .hero-image {

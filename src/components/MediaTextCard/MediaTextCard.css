@@ -222,7 +222,7 @@
   .mobile-view .ImageTextCard-media-container {
     max-width: 100%;
     width: 100%;
-    min-height: 250px;
+    /* min-height: 250px; */
     margin: 20px auto 25px;
   }
 
@@ -282,7 +282,7 @@
   }
 
   .mobile-view .ImageTextCard-media-container {
-    min-height: 180px;
+    /* min-height: 180px; */
     margin: 15px auto 20px;
   }
 
