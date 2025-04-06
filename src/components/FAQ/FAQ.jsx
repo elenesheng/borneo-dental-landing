@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import './FAQ.css';
 
-const FAQ = ({ forwardedRef }) => {
+const FAQ = ({ forwardedRef, backgroundImage = false }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqItems = [
@@ -63,32 +63,56 @@ const FAQ = ({ forwardedRef }) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  return (
-    <section ref={forwardedRef} className="faq-section padding">
-      <Container>
-        <h2 className="main-title text-center">Frequently Asked Questions</h2>
+  // Prepare section styles
+  let sectionStyle = {};
+  if (backgroundImage) {
+    sectionStyle = {
+      position: 'relative',
+    };
+  }
 
-        <div className="faq-container">
-          {faqItems.map((item, index) => (
-            <div
-              key={index}
-              className={`faq-item ${
-                openIndex === index ? 'active' : ''
-              } fade-in-up`}
-              onClick={() => toggleQuestion(index)}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="faq-question">
-                <span>{item.question}</span>
-                <div className="arrow-icon">↑</div>
+  return (
+    <section
+      ref={forwardedRef}
+      className={`faq-section padding ${
+        backgroundImage ? 'with-tooth-bg' : ''
+      }`}
+      style={sectionStyle}
+    >
+      {backgroundImage && (
+        <div
+          className="tooth-background-center"
+          style={{
+            backgroundImage: 'url("/Tooth.png")',
+          }}
+        />
+      )}
+      <div style={{ position: 'relative', zIndex: 2 }}>
+        <Container>
+          <h2 className="main-title text-center">Frequently Asked Questions</h2>
+
+          <div className="faq-container">
+            {faqItems.map((item, index) => (
+              <div
+                key={index}
+                className={`faq-item ${
+                  openIndex === index ? 'active' : ''
+                } fade-in-up`}
+                onClick={() => toggleQuestion(index)}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="faq-question">
+                  <span>{item.question}</span>
+                  <div className="arrow-icon">↑</div>
+                </div>
+                <div className="faq-answer">
+                  <p>{item.answer}</p>
+                </div>
               </div>
-              <div className="faq-answer">
-                <p>{item.answer}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Container>
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   );
 };

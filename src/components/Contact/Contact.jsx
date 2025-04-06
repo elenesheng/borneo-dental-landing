@@ -84,11 +84,9 @@ const Contact = ({ forwardedRef }) => {
     <section ref={forwardedRef} className="contact-section padding">
       <Container>
         <div className="d-flex flex-column align-items-center text-center mb-5">
-          <h2 className="main-title">Get Your Free Smile Assessment</h2>
-          <p className="contact-subtitle">
-            Upload your teeth photos and our experts will evaluate if clear
-            aligners are right for you
-          </p>
+          <h2 className="main-title">
+            Get Your 1-time Complimentary Smile Assessment
+          </h2>
         </div>
         <Row>
           <Col lg={5}>

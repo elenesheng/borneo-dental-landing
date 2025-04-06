@@ -5,6 +5,27 @@
   justify-content: space-between;
   gap: 2rem;
   padding: 4rem 0;
+  position: relative;
+}
+
+/* Tooth background specific styles */
+.with-tooth-bg {
+  overflow: hidden;
+  position: relative;
+}
+
+.tooth-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+  opacity: 0.8;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* To support the new mobile/desktop views */
@@ -38,6 +59,11 @@
   width: 100%;
 }
 
+/* When text is hidden on mobile (hideTextOnMobile=true) adjust spacing */
+.mobile-view .ImageTextCard-media-container:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
 .mobile-view .ImageTextCard-text {
   margin-bottom: 2rem;
   font-size: 16px;
@@ -48,6 +74,11 @@
   display: flex;
   justify-content: center;
   margin-top: 1.5rem;
+}
+
+/* When text is hidden and CTA follows media directly */
+.mobile-view .ImageTextCard-media-container + .cta-group {
+  margin-top: 0;
 }
 
 /* Flex alignment options */
@@ -206,6 +237,19 @@
   .mobile-view .ImageTextCard-title {
     font-size: 26px;
   }
+
+  .doctor-info {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+
+  .doctor-name {
+    font-size: 36px;
+  }
+
+  .tooth-background {
+    width: 40%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -269,6 +313,11 @@
   .mobile-view .cta-group {
     width: 100%;
   }
+
+  .tooth-background {
+    width: 35%;
+    opacity: 0.15;
+  }
 }
 
 @media (max-width: 576px) {
@@ -283,7 +332,7 @@
 
   .mobile-view .ImageTextCard-media-container {
     /* min-height: 180px; */
-    margin: 15px auto 20px;
+    /* margin: 15px auto 20px; */
   }
 
   .mobile-view .ImageTextCard-title {
@@ -311,16 +360,10 @@
   .ImageTextCard-secondary-media {
     margin-top: 20px;
   }
-}
 
-@media (max-width: 991px) {
-  .doctor-info {
-    padding-left: 0;
-    margin-top: 2rem;
-  }
-
-  .doctor-name {
-    font-size: 36px;
+  .tooth-background {
+    width: 30%;
+    opacity: 0.1;
   }
 }
 
@@ -333,9 +376,9 @@
     font-size: 14px;
   }
 
-  .mobile-view .ImageTextCard-media-container {
+  /* .mobile-view .ImageTextCard-media-container {
     min-height: 160px;
-  }
+  } */
 
   .ImageTextCard-section {
     padding: 1.5rem 0;

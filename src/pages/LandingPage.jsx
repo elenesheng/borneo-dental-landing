@@ -104,6 +104,7 @@ const LandingPage = () => {
         isButtonVisible={false}
         content={whyChooseContent}
         flexPosition="center"
+        backgroundImage={true}
       />
 
       <MediaTextCard
@@ -127,6 +128,8 @@ const LandingPage = () => {
         mediaType="image"
         isButtonVisible={false}
         flexPosition="start"
+        hideBackgroundImage={true}
+        hideTextOnMobile={true}
       />
       <Testimonials forwardedRef={testimonialRef} />
       <MediaTextCard
@@ -140,7 +143,7 @@ const LandingPage = () => {
         contactRef={contactRef}
         flexPosition="center"
       />
-      <FAQ />
+      <FAQ backgroundImage={true} />
       <Contact forwardedRef={contactRef} />
       <Map />
     </div>

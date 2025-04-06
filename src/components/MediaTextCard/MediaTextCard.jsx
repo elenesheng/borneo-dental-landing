@@ -18,6 +18,8 @@ const MediaTextCard = ({
   contactRef,
   flexPosition = 'center',
   altText,
+  backgroundImage = false,
+  hideTextOnMobile = false,
 }) => {
   // Check if the media is a Google Drive link
   const isGoogleDriveVideo =
@@ -104,7 +106,7 @@ const MediaTextCard = ({
         {mediaContent}
         {secondaryMediaContent}
       </div>
-      <div className="ImageTextCard-text">{content}</div>
+      {!hideTextOnMobile && <div className="ImageTextCard-text">{content}</div>}
       {renderButtons()}
     </div>
   );
@@ -140,13 +142,34 @@ const MediaTextCard = ({
     </div>
   );
 
+  // Prepare section styles
+  let sectionStyle = {};
+  if (backgroundImage) {
+    sectionStyle = {
+      position: 'relative',
+    };
+  }
+
   return (
     <section
       ref={forwardedRef}
-      className={`ImageTextCard-section padding ${position}-media ${flexPosition}-aligned`}
+      className={`ImageTextCard-section padding ${position}-media ${flexPosition}-aligned ${
+        backgroundImage ? 'with-tooth-bg' : ''
+      }`}
+      style={sectionStyle}
     >
-      <MobileView />
-      <DesktopView />
+      {backgroundImage && (
+        <div
+          className="tooth-background"
+          style={{
+            backgroundImage: 'url("/Tooth.png")',
+          }}
+        />
+      )}
+      <div style={{ position: 'relative', zIndex: 2, width: '100%' }}>
+        <MobileView />
+        <DesktopView />
+      </div>
     </section>
   );
 };

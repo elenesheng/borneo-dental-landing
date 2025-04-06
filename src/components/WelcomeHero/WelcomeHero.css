@@ -13,10 +13,10 @@
 }
 
 .welcome-hero .hero-title {
-  font-size: 57px;
+  font-size: 60px;
   font-weight: 600;
   color: #001430;
-  line-height: 1.2;
+  line-height: 1;
   margin: 0;
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
   opacity: 0;

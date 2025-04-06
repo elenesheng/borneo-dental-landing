@@ -117,21 +117,22 @@ export const approachContent = (
       not only look good, but feel right and last longer.
     </p>
     <p>
-      <br /> ✓ Doctor-Led, Not Sales-Led Your treatment is reviewed and
+      <br /> <b> ✓𝐃𝐨𝐜𝐭𝐨𝐫-𝐋𝐞𝐝, 𝐍𝐨𝐭 𝐒𝐚𝐥𝐞𝐬-𝐋𝐞𝐝:</b> Your treatment is reviewed and
       explained by Dr. Ghana (and a team of dental technician and specialist) —
       not rushed or left to chance.
-      <br /> ✓ Digital Smile Design Expertise Trained in Spain's DSD Institute
-      and experienced in over 700+ aligner cases, our experienced dentists
-      ensures your smile is planned with precision, aesthetics, and function in
-      mind.
-      <br /> ✓ Whole-Health Oral Philosophy We don't just look at teeth — we
-      examine how your smile impacts your bite, jaw, speech, and even aging.
-      <br /> ✓ Ethical, Honest Recommendations If aligners aren't right for you,
-      we'll tell you. If it's too early to treat — we'll also tell you. Our
-      reputation is built on transparency.
-      <br /> ✓ Modern Comfort, Traditional Values We use the latest 3D scans,
-      AI-powered simulations, and global lab partners (like London-based
-      ceramists) — but treat every patient like family.
+      <br /> <b> ✓ 𝐃𝐢𝐠𝐢𝐭𝐚𝐥 𝐒𝐦𝐢𝐥𝐞 𝐃𝐞𝐬𝐢𝐠𝐧 𝐄𝐱𝐩𝐞𝐫𝐭𝐢𝐬𝐞: </b>Trained in Spain's DSD
+      Institute and experienced in over 700+ aligner cases, our experienced
+      dentists ensures your smile is planned with precision, aesthetics, and
+      function in mind.
+      <br /> <b> ✓ 𝐖𝐡𝐨𝐥𝐞-𝐇𝐞𝐚𝐥𝐭𝐡 𝐎𝐫𝐚𝐥 𝐏𝐡𝐢𝐥𝐨𝐬𝐨𝐩𝐡𝐲: </b> We don't just look at
+      teeth — we examine how your smile impacts your bite, jaw, speech, and even
+      aging.
+      <br /> <b> ✓ 𝐄𝐭𝐡𝐢𝐜𝐚𝐥, 𝐇𝐨𝐧𝐞𝐬𝐭 𝐑𝐞𝐜𝐨𝐦𝐦𝐞𝐧𝐝𝐚𝐭𝐢𝐨𝐧𝐬: </b> If aligners aren't
+      right for you, we'll tell you. If it's too early to treat — we'll also
+      tell you. Our reputation is built on transparency.
+      <br /> <b> ✓ 𝐌𝐨𝐝𝐞𝐫𝐧 𝐂𝐨𝐦𝐟𝐨𝐫𝐭, 𝐓𝐫𝐚𝐝𝐢𝐭𝐢𝐨𝐧𝐚𝐥 𝐕𝐚𝐥𝐮𝐞𝐬: </b> We use the latest 3D
+      scans, AI-powered simulations, and global lab partners (like London-based
+      ceramists) — <b>𝐛𝐮𝐭 𝐭𝐫𝐞𝐚𝐭 𝐞𝐯𝐞𝐫𝐲 𝐩𝐚𝐭𝐢𝐞𝐧𝐭 𝐥𝐢𝐤𝐞 𝐟𝐚𝐦𝐢𝐥𝐲</b>.
     </p>
   </>
 );
