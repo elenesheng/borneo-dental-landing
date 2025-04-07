@@ -1,8 +1,14 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import './WelcomeHero.css';
+import openWhatsAppChat from '../../utils/whatsapp';
 
 const WelcomeHero = ({ forwardedRef, scrollToSection, contactRef }) => {
+  // Handle WhatsApp click
+  const handleWhatsAppClick = () => {
+    openWhatsAppChat();
+  };
+
   return (
     <section ref={forwardedRef} className="welcome-hero section-padding">
       <Container className="hero-section py-5">
@@ -40,7 +46,7 @@ const WelcomeHero = ({ forwardedRef, scrollToSection, contactRef }) => {
                 variant="primary"
                 size="lg"
                 className="me-3 primary-button"
-                onClick={() => scrollToSection(contactRef)}
+                onClick={handleWhatsAppClick}
               >
                 Reverse Aging with Smile Alignment
               </Button>

@@ -115,9 +115,10 @@
 
 .form-title {
   color: #ffffff;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+  text-align: left;
 }
 
 .form-control {
@@ -288,8 +289,8 @@ textarea.form-control {
   }
 
   .form-title {
-    font-size: 20px;
-    margin-bottom: 24px;
+    font-size: 24px;
+    margin-bottom: 20px;
   }
 
   .form-control {
@@ -382,4 +383,308 @@ textarea.form-control {
 
 .file-upload-field.is-invalid {
   border-bottom: 2px solid #ff6b6b;
+}
+
+/* Google Form Embed Styles */
+.google-form-container {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #5aa7e0, #1e5799);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove the before pseudo-element since we're setting the background directly */
+.google-form-container:before {
+  display: none;
+}
+
+.google-form-container iframe {
+  width: 100%;
+  height: 780px;
+  background: transparent;
+  filter: none; /* Remove any filters to keep colors exact */
+}
+
+.form-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(9, 129, 200, 0.2);
+  z-index: 1;
+}
+
+.form-loading p {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Custom styling for when the Google Form is loaded */
+.contact-form {
+  padding: 0; /* Remove padding to let the form fill the container */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: transparent;
+}
+
+@media (max-width: 991px) {
+  .google-form-container iframe {
+    height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .google-form-container {
+    min-height: 600px;
+  }
+
+  .google-form-container iframe {
+    height: 680px;
+  }
+}
+
+@media (max-width: 576px) {
+  .google-form-container {
+    min-height: 550px;
+  }
+
+  .google-form-container iframe {
+    height: 580px;
+  }
+}
+
+/* Custom form styling to exactly match the image */
+.custom-form-container {
+  background: linear-gradient(to bottom, #5aa7e0, #1e5799);
+  border-radius: 20px;
+  padding: 40px;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+}
+
+.custom-contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.custom-input,
+.custom-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 16px 0;
+  color: white;
+  font-size: 18px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-input:focus,
+.custom-textarea:focus {
+  border-color: white;
+  box-shadow: none;
+}
+
+.custom-input::placeholder,
+.custom-textarea::placeholder {
+  color: white;
+  opacity: 1;
+  font-size: 18px;
+}
+
+.custom-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Submit button exactly matching the image */
+.custom-submit-button {
+  background: white;
+  color: #4e9bd4;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 40px;
+  min-width: 280px;
+  text-align: center;
+  align-self: center;
+}
+
+.custom-submit-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.custom-submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success and Error message styling */
+.success-message,
+.error-message {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.success-message {
+  background: rgba(72, 187, 120, 0.2);
+}
+
+.error-message {
+  background: rgba(245, 101, 101, 0.2);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .custom-form-container {
+    padding: 30px 20px;
+    min-height: 550px;
+  }
+
+  .form-group {
+    margin-bottom: 35px;
+  }
+
+  .custom-input,
+  .custom-textarea {
+    font-size: 16px;
+    padding-bottom: 12px;
+  }
+
+  .custom-textarea {
+    min-height: 120px;
+  }
+
+  .custom-input::placeholder,
+  .custom-textarea::placeholder {
+    font-size: 16px;
+  }
+
+  .custom-submit-button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 16px;
+    min-width: unset;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-form-container {
+    padding: 25px 15px;
+    min-height: 500px;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+  }
+
+  .custom-textarea {
+    min-height: 100px;
+  }
+}
+
+/* WhatsApp button styling */
+.whatsapp-button {
+  background-color: #25d366 !important;
+  color: white !important;
+}
+
+.whatsapp-button:hover {
+  background-color: #128c7e !important;
+  color: white !important;
+}
+
+/* Direct WhatsApp option styling */
+.direct-whatsapp-option {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.direct-whatsapp-option p {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.direct-whatsapp-btn {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.direct-whatsapp-btn i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.direct-whatsapp-btn:hover {
+  background-color: #128c7e;
+  transform: translateY(-2px);
+}
+
+/* Form divider */
+.form-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-divider span {
+  padding: 0 15px;
+  color: white;
+  font-size: 14px;
+}
+
+/* Buttons container */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

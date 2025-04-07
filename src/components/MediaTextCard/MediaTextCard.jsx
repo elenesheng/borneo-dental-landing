@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import './MediaTextCard.css';
+import openWhatsAppChat from '../../utils/whatsapp';
 
 const MediaTextCard = ({
   forwardedRef,
@@ -42,6 +43,11 @@ const MediaTextCard = ({
     return title
       ? `Additional image for ${title} - Borneo Dental Centre dental services`
       : 'Additional dental treatment image at Borneo Dental Centre';
+  };
+
+  // Handle the WhatsApp button click
+  const handleWhatsAppClick = () => {
+    openWhatsAppChat();
   };
 
   const mediaContent =
@@ -90,7 +96,7 @@ const MediaTextCard = ({
           variant="primary"
           size="lg"
           className="primary-button"
-          onClick={() => scrollToSection(contactRef)}
+          onClick={handleWhatsAppClick}
         >
           {primaryButtonText}
         </Button>
