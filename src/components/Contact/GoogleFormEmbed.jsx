@@ -8,12 +8,9 @@ const GoogleFormEmbed = () => {
     name: '',
     email: '',
     phone: '',
-    concerns: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
-  const [showWhatsAppOption, setShowWhatsAppOption] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,146 +20,76 @@ const GoogleFormEmbed = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError(false);
-    setShowWhatsAppOption(false);
 
     try {
-      // Using the actual form ID and entry IDs from the HTML source
+      // Google Form ID
       const googleFormId =
-        'e/1FAIpQLSct0oKr1lCWIEROMaOuFsAUhiQYQyw-VmN0LTlQpdq4u-uPzA';
-      const formUrl = `https://docs.google.com/forms/d/${googleFormId}/formResponse`;
+        '1FAIpQLSd6FN_M3DHcO731P_cFGlXlmPNteweCNyc-obU1cWSg3Y6WbA';
 
-      // Create a hidden form to submit the data
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = formUrl;
-      form.target = '_blank'; // This prevents redirecting the user to Google Forms
+      // Create URL with prefilled entries for the Google Form
+      const prefilledUrl =
+        `https://docs.google.com/forms/d/e/${googleFormId}/viewform?` +
+        `entry.1484405726=${encodeURIComponent(formData.name)}` +
+        `&entry.87216746=${encodeURIComponent(formData.email)}` +
+        `&entry.311744263=${encodeURIComponent(formData.phone)}`;
 
-      // Add form fields with the actual entry IDs from the HTML
-      // Name field - entry.562846113
-      const nameField = document.createElement('input');
-      nameField.type = 'text';
-      nameField.name = 'entry.562846113'; // From the HTML data-params
-      nameField.value = formData.name;
-      form.appendChild(nameField);
+      console.log('Redirecting to Google Form with URL:', prefilledUrl);
 
-      // Email field - entry.262264792
-      const emailField = document.createElement('input');
-      emailField.type = 'text';
-      emailField.name = 'entry.262264792'; // From the HTML data-params
-      emailField.value = formData.email;
-      form.appendChild(emailField);
+      // Open the Google Form in a new tab
+      window.open(prefilledUrl, '_blank');
 
-      // Phone field - entry.1587610569
-      const phoneField = document.createElement('input');
-      phoneField.type = 'text';
-      phoneField.name = 'entry.1587610569'; // From the HTML data-params
-      phoneField.value = formData.phone;
-      form.appendChild(phoneField);
-
-      // Concerns field - entry.2147181981
-      const concernsField = document.createElement('input');
-      concernsField.type = 'text';
-      concernsField.name = 'entry.2147181981'; // From the HTML data-params
-      concernsField.value = formData.concerns;
-      form.appendChild(concernsField);
-
-      // Append the form to the document
-      document.body.appendChild(form);
-
-      try {
-        // Submit the form
-        form.submit();
-
-        // Set success state after a short delay
-        setTimeout(() => {
-          setIsSubmitting(false);
-          setSubmitSuccess(true);
-
-          // Reset form
-          setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            concerns: '',
-          });
-
-          // Reset success message after a few seconds
-          setTimeout(() => {
-            setSubmitSuccess(false);
-          }, 5000);
-        }, 1000);
-      } catch (submitError) {
-        console.error('Error during form submission:', submitError);
-        setIsSubmitting(false);
-        setSubmitError(true);
-        setShowWhatsAppOption(true);
-      }
-
-      // Clean up the form
+      // Reset form after successful submission
       setTimeout(() => {
-        if (document.body.contains(form)) {
-          document.body.removeChild(form);
-        }
-      }, 100);
+        setIsSubmitting(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+        });
+      }, 500);
     } catch (error) {
-      console.error('Error creating form:', error);
+      console.error('Error redirecting to Google Form:', error);
       setIsSubmitting(false);
       setSubmitError(true);
-      setShowWhatsAppOption(true);
-
-      // Reset error message after a few seconds
-      setTimeout(() => {
-        setSubmitError(false);
-      }, 5000);
     }
-  };
-
-  // Handle WhatsApp option
-  const handleWhatsAppSubmit = () => {
-    // Create custom message with form data
-    const customMessage = `Hey :) Interested to know more about the Smile Pre-assessment.. \n\nname: ${formData.name}\nemail: ${formData.email}\nphone: ${formData.phone}\nconcerns: ${formData.concerns}`;
-
-    // Open WhatsApp with the form data
-    openWhatsAppChat(customMessage);
-
-    // Reset form after WhatsApp opens
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      concerns: '',
-    });
-
-    // Hide options
-    setShowWhatsAppOption(false);
   };
 
   // Direct WhatsApp click without using the form
   const handleDirectWhatsApp = () => {
-    openWhatsAppChat();
+    const message =
+      'Hey :) Interested to know more about the Smile Pre-assessment.. \n\nname: \nlocation: KL or KK';
+    openWhatsAppChat(message);
+  };
+
+  // WhatsApp as fallback
+  const handleWhatsAppSubmit = () => {
+    const customMessage = `Hey :) Interested to know more about the Smile Pre-assessment.. \n\nname: ${formData.name}\nemail: ${formData.email}\nphone: ${formData.phone}`;
+    openWhatsAppChat(customMessage);
   };
 
   return (
     <div className="custom-form-container">
-      {submitSuccess && (
-        <div className="success-message">
-          Thank you for your submission! We'll be in touch soon.
-        </div>
-      )}
-
       {submitError && (
         <div className="error-message">
-          There was an error submitting your form. Please try using the WhatsApp
-          option below.
+          <i className="bi bi-exclamation-triangle-fill me-2"></i>
+          Unable to open the Google Form. Please try again or use WhatsApp
+          instead.
+          <button
+            type="button"
+            className="whatsapp-button mt-3"
+            onClick={handleWhatsAppSubmit}
+          >
+            <i className="bi bi-whatsapp me-2"></i> Send via WhatsApp Instead
+          </button>
         </div>
       )}
 
       <div className="direct-whatsapp-option">
-        <p>Prefer to chat directly? Use WhatsApp:</p>
+        <p>Get quick response via WhatsApp:</p>
         <button
           type="button"
           className="direct-whatsapp-btn"
@@ -177,6 +104,8 @@ const GoogleFormEmbed = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="custom-contact-form">
+        <div className="form-title">Smile Pre-Assessment Request</div>
+
         <div className="form-group">
           <input
             type="text"
@@ -207,21 +136,22 @@ const GoogleFormEmbed = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="Your Phone Number"
+            placeholder="Mobile number/WhatsApp"
             required
             className="custom-input"
           />
         </div>
 
-        <div className="form-group">
-          <textarea
-            name="concerns"
-            value={formData.concerns}
-            onChange={handleChange}
-            placeholder="Tell us about your dental concerns..."
-            required
-            className="custom-textarea"
-          ></textarea>
+        <div className="upload-info">
+          <div className="upload-icon-large">
+            <i className="bi bi-cloud-arrow-up"></i>
+          </div>
+          <p>
+            After submitting this form, you'll be redirected to Google Forms
+            <br />
+            where you can upload your teeth photos and complete your assessment
+            request.
+          </p>
         </div>
 
         <div className="buttons-container">
@@ -230,18 +160,8 @@ const GoogleFormEmbed = () => {
             className="custom-submit-button"
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Submitting...' : 'Submit Assessment Request'}
+            {isSubmitting ? 'Submitting...' : 'Continue & Upload Photos'}
           </button>
-
-          {showWhatsAppOption && (
-            <button
-              type="button"
-              className="custom-submit-button whatsapp-button mt-3"
-              onClick={handleWhatsAppSubmit}
-            >
-              <i className="bi bi-whatsapp me-2"></i> Send via WhatsApp
-            </button>
-          )}
         </div>
       </form>
     </div>

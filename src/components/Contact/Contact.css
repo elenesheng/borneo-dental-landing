@@ -389,76 +389,91 @@ textarea.form-control {
 .google-form-container {
   position: relative;
   width: 100%;
-  min-height: 650px;
+  min-height: 780px;
   border-radius: 20px;
   overflow: hidden;
-  background: linear-gradient(to bottom, #5aa7e0, #1e5799);
+  margin-top: 20px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+  );
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Remove the before pseudo-element since we're setting the background directly */
 .google-form-container:before {
-  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(9, 129, 200, 0.1),
+    rgba(13, 110, 253, 0.2)
+  );
+  z-index: 0;
 }
 
 .google-form-container iframe {
+  position: relative;
   width: 100%;
   height: 780px;
+  border: none;
+  z-index: 1;
   background: transparent;
-  filter: none; /* Remove any filters to keep colors exact */
+  filter: hue-rotate(-5deg) saturate(0.95);
 }
 
 .form-loading {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: rgba(9, 129, 200, 0.2);
-  z-index: 1;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 2;
 }
 
 .form-loading p {
-  color: white;
   font-size: 18px;
+  color: #0981c8;
   font-weight: 500;
 }
 
-/* Custom styling for when the Google Form is loaded */
-.contact-form {
-  padding: 0; /* Remove padding to let the form fill the container */
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  background: transparent;
-}
-
+/* Responsive adjustments for Google Form */
 @media (max-width: 991px) {
+  .google-form-container {
+    min-height: 850px;
+  }
+
   .google-form-container iframe {
-    height: 700px;
+    height: 850px;
   }
 }
 
 @media (max-width: 768px) {
   .google-form-container {
-    min-height: 600px;
+    min-height: 950px;
   }
 
   .google-form-container iframe {
-    height: 680px;
+    height: 950px;
   }
 }
 
 @media (max-width: 576px) {
   .google-form-container {
-    min-height: 550px;
+    min-height: 1200px;
+    margin-top: 30px;
   }
 
   .google-form-container iframe {
-    height: 580px;
+    height: 1200px;
   }
 }
 
@@ -619,46 +634,60 @@ textarea.form-control {
 .whatsapp-button {
   background-color: #25d366 !important;
   color: white !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-button i {
+  font-size: 20px;
+  margin-right: 10px;
 }
 
 .whatsapp-button:hover {
-  background-color: #128c7e !important;
-  color: white !important;
+  background-color: #22c55e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
 }
 
 /* Direct WhatsApp option styling */
 .direct-whatsapp-option {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .direct-whatsapp-option p {
-  color: white;
+  font-size: 16px;
   margin-bottom: 10px;
+  color: #525252;
 }
 
 .direct-whatsapp-btn {
-  background-color: #25d366;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  background-color: #25d366;
+  color: white;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
 }
 
 .direct-whatsapp-btn i {
-  margin-right: 8px;
   font-size: 20px;
+  margin-right: 10px;
 }
 
 .direct-whatsapp-btn:hover {
-  background-color: #128c7e;
+  background-color: #22c55e;
   transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
 }
 
 /* Form divider */
@@ -666,20 +695,22 @@ textarea.form-control {
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 20px 0;
+  margin: 30px 0;
+  position: relative;
 }
 
 .form-divider::before,
 .form-divider::after {
   content: '';
   flex: 1;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid #ddd;
 }
 
 .form-divider span {
-  padding: 0 15px;
-  color: white;
+  padding: 0 10px;
   font-size: 14px;
+  color: #777;
+  background: transparent;
 }
 
 /* Buttons container */
@@ -687,4 +718,109 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.upload-info {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.upload-icon-large {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.upload-info p {
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .upload-info {
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+
+  .upload-icon-large {
+    font-size: 32px;
+  }
+
+  .upload-info p {
+    font-size: 14px;
+  }
+}
+
+.open-form-button {
+  background: white;
+  color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.open-form-button:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.error-message {
+  background: rgba(220, 53, 69, 0.2);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-submit-button {
+  background: white;
+  color: #0981c8;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 40px;
+  min-width: 280px;
+  text-align: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email-submit-button i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.email-submit-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.email-submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
 }
