@@ -10,7 +10,7 @@ const ContactInfo = () => {
           </div>
           <div className="method-details">
             <h3>Email Us</h3>
-            <p>info@borneodental.com</p>
+            <p>admin@borneodentalcentre.com</p>
           </div>
         </div>
 
@@ -20,7 +20,7 @@ const ContactInfo = () => {
           </div>
           <div className="method-details">
             <h3>Chat With Us</h3>
-            <p>Open WhatsApp Chat</p>
+            <p>whatsapp wa.me/+60 11-3789 3980</p>
           </div>
         </div>
 
@@ -30,7 +30,10 @@ const ContactInfo = () => {
           </div>
           <div className="method-details">
             <h3>Call Us</h3>
-            <p>+60 123456789</p>
+            <p>
+              +6019-411 1213 (Luyang, KK), +60197331020 (Bundusan, KK),
+              +6013-588 1213 (Kuala Lumpur)
+            </p>
           </div>
         </div>
 
@@ -40,20 +43,28 @@ const ContactInfo = () => {
           </div>
           <div className="method-details">
             <h3>Visit Us</h3>
-            <p>Kuala Lumpur, Malaysia</p>
-            <p className="schedule">Monday - Friday: 9am - 6pm</p>
+            <p>
+              Kuala Lumpur, Malaysia @ Vital Plus Dental: Jalan SS 21/39,
+              Damansara Utama Kota Kinabalu @ Fu Yen or Bundusan
+            </p>
+            {/* <p className="schedule">Monday - Friday: 9am - 6pm</p> */}
           </div>
         </div>
       </div>
 
       <div className="social-links">
-        <a href="#" className="social-link">
+        <a
+          href="https://www.facebook.com/bdcluyang/"
+          className="social-link"
+          target="_blank"
+        >
           <i className="bi bi-facebook"></i>
         </a>
-        <a href="#" className="social-link">
-          <i className="bi bi-linkedin"></i>
-        </a>
-        <a href="#" className="social-link">
+        <a
+          href="https://www.instagram.com/borneodental.luyang/"
+          className="social-link"
+          target="_blank"
+        >
           <i className="bi bi-instagram"></i>
         </a>
       </div>
