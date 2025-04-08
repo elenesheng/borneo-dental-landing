@@ -5,22 +5,6 @@
   --text-color: #525252;
 }
 
-/* Set tooth image as background for the entire page body,
-html {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-html body {
-  background-image: url('/publicTooth.png') !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-attachment: fixed !important;
-  position: relative !important;
-} */
-
 .landing-page {
   background-image: url('/public/Tooth.png') !important;
   background-position: center center !important;

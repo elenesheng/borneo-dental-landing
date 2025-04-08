@@ -47,7 +47,6 @@ const ContactInfo = () => {
               Kuala Lumpur, Malaysia @ Vital Plus Dental: Jalan SS 21/39,
               Damansara Utama Kota Kinabalu @ Fu Yen or Bundusan
             </p>
-            {/* <p className="schedule">Monday - Friday: 9am - 6pm</p> */}
           </div>
         </div>
       </div>

@@ -25,11 +25,6 @@ const Features = () => {
       altText:
         'Heart icon showing our commitment to compassionate patient care',
     },
-    // {
-    //   imgSrc: '/digital-icon.png',
-    //   title: 'Digital Dental Solutions',
-    //   altText: 'Digital technology icon representing modern dental diagnostics',
-    // },
     {
       imgSrc: '/reverse-icon.png',
       title: 'Reverse your age',

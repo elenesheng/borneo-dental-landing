@@ -4,19 +4,41 @@
   "description": "Professional dental services and clear aligner treatments in Kota Kinabalu and Kuala Lumpur",
   "icons": [
     {
-      "src": "tooth-icon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "favicon-196.png",
+      "sizes": "196x196",
       "type": "image/png"
     },
     {
-      "src": "toothIcon.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "favicon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
     },
     {
       "src": "logo-transparent-bg.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo-transparent-bg.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",

@@ -30,7 +30,7 @@ const GoogleFormEmbed = () => {
       const googleFormId =
         '1FAIpQLSd6FN_M3DHcO731P_cFGlXlmPNteweCNyc-obU1cWSg3Y6WbA';
 
-      // Create URL with prefilled entries for the Google Form
+      // URL with prefilled entries for the Google Form
       const prefilledUrl =
         `https://docs.google.com/forms/d/e/${googleFormId}/viewform?` +
         `entry.1484405726=${encodeURIComponent(formData.name)}` +

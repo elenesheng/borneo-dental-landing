@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './Contact.css';
 
-// Import the extracted components
 import ContactInfo from './ContactInfo';
 import GoogleFormEmbed from './GoogleFormEmbed';
 
